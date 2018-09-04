@@ -4,6 +4,8 @@
 @Table-cell-padding-extended: 8px 9.4px;
 @Table-cell-padding-compressed: 2.5px 9.4px;
 
+
+
 .lucid-Table {
 	font: 500 @font;
 	color: @color-textColor;
@@ -34,7 +36,16 @@
 	.lucid-Table-Th {
 		padding: 0;
 	}
-
+	thead.fixedHeader tr {
+		position: relative;
+		display: block
+	}
+	
+	tbody.scrollContent {
+		display: block;
+		overflow: auto;
+		width: 100%
+	}
 	// `Table`.`hasWordWrap` prop
 	.lucid-Table-Td,
 	.lucid-Table-Th {

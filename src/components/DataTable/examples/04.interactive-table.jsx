@@ -184,6 +184,7 @@ export default createClass({
 				)}
 				density="extended"
 				isSelectable
+				width="70px"
 				isActionable
 				onRowClick={this.handleRowClick}
 				onSelect={this.handleSelect}
@@ -192,7 +193,7 @@ export default createClass({
 			>
 				<DataTable.Column
 					field="id"
-					width={41}
+					width="40px"
 					align="left"
 					hasBorderLeft
 					isSortable
@@ -204,7 +205,7 @@ export default createClass({
 
 				<DataTable.Column
 					field="first_name"
-					width={100}
+					width="100px"
 					hasBorderLeft
 					hasBorderRight
 					isResizable
@@ -218,7 +219,7 @@ export default createClass({
 				<DataTable.Column
 					field="last_name"
 					align="left"
-					width={100}
+					width="100px"
 					hasBorderRight
 					isResizable
 					isSortable

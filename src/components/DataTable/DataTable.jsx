@@ -72,6 +72,10 @@ const DataTable = createClass({
 			\`onSelectAll\` to be triggered.
 		`,
 
+		isFixedHeader: bool`
+			Renders a fixed position  header allowing \`content\` to scroll inside.
+		`,
+
 		style: object`
 			Styles that are passed through to the root container.
 		`,
@@ -125,6 +129,7 @@ const DataTable = createClass({
 		return {
 			emptyCellText: '--',
 			isActionable: false,
+			isFixedHeader: false,
 			isSelectable: false,
 			onRowClick: _.noop,
 			onSelect: _.noop,
@@ -205,6 +210,7 @@ const DataTable = createClass({
 			emptyCellText,
 			isActionable,
 			isFullWidth,
+			isFixedHeader,
 			isLoading,
 			isSelectable,
 			style,
@@ -275,8 +281,9 @@ const DataTable = createClass({
 						},
 						className
 					)}
+					height={passThroughs.height}
 				>
-					<Thead>
+					<Thead className={isFixedHeader ? 'fixedHeader' : ''}>
 						<Tr>
 							{isSelectable ? (
 								<Th rowSpan={hasGroupedColumns ? 2 : null} width={24}>
@@ -322,6 +329,9 @@ const DataTable = createClass({
 												'title',
 											])}
 											key={_.get(props, 'field', index)}
+											style={{
+												width: props.width,
+											}}
 										>
 											{props.title || props.children}
 										</Th>
@@ -349,7 +359,7 @@ const DataTable = createClass({
 																	? _.partial(
 																			this.handleSort,
 																			columnProps.field
-																		)
+																	  )
 																	: null
 															}
 															style={{
@@ -359,14 +369,17 @@ const DataTable = createClass({
 														>
 															{columnProps.title || columnProps.children}
 														</Th>,
-													]
+												  ]
 										),
 									[]
 								)}
 							</Tr>
 						) : null}
 					</Thead>
-					<Tbody>
+					<Tbody
+						height={passThroughs.height}
+						className={isFixedHeader ? 'scrollContent' : ''}
+					>
 						{_.map(data, (row, index) => (
 							<Tr
 								{..._.pick(row, ['isDisabled', 'isActive', 'isSelected'])}

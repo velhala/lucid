@@ -1,6 +1,12 @@
 import React from 'react';
 import createClass from 'create-react-class';
-import { DataTable, SuccessIcon } from '../../../index';
+import {
+	DataTable,
+	SuccessIcon,
+	FileIcon,
+	EditIcon,
+	DeleteIcon,
+} from '../../..';
 
 const data = [
 	{
@@ -438,8 +444,8 @@ const data = [
 export default createClass({
 	render() {
 		return (
-			<DataTable data={data}>
-				<DataTable.Column field="id" align="left">
+			<DataTable isFixedHeader height={400} data={data}>
+				<DataTable.Column width={30} field="id" align="left">
 					ID
 				</DataTable.Column>
 
@@ -451,19 +457,19 @@ export default createClass({
 					Last
 				</DataTable.Column>
 
-				<DataTable.Column field="email" align="left">
+				<DataTable.Column field="email" align="left" width={100}>
 					E-Mail
 				</DataTable.Column>
 
-				<DataTable.Column field="occupation" align="left" width={100}>
+				<DataTable.Column field="occupation" align="left" width={200}>
 					Occupation
 				</DataTable.Column>
 
-				<DataTable.Column field="salary" align="right" width={100}>
+				<DataTable.Column field="salary" align="right" width={200}>
 					Salary
 				</DataTable.Column>
 
-				<DataTable.Column field="status" align="center" width={100}>
+				<DataTable.Column field="status" align="center" width={150}>
 					Status
 				</DataTable.Column>
 			</DataTable>
