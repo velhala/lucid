@@ -449,27 +449,27 @@ export default createClass({
 					ID
 				</DataTable.Column>
 
-				<DataTable.Column field="first_name" align="left" width={100}>
+				<DataTable.Column field="first_name" align="left" width={150}>
 					First
 				</DataTable.Column>
 
-				<DataTable.Column field="last_name" align="left" width={100}>
+				<DataTable.Column field="last_name" align="left" width={150}>
 					Last
 				</DataTable.Column>
 
-				<DataTable.Column field="email" align="left" width={100}>
+				<DataTable.Column field="email" align="left" width={550}>
 					E-Mail
 				</DataTable.Column>
 
-				<DataTable.Column field="occupation" align="left" width={200}>
+				<DataTable.Column field="occupation" align="left" width={160}>
 					Occupation
 				</DataTable.Column>
 
-				<DataTable.Column field="salary" align="right" width={200}>
+				<DataTable.Column field="salary" align="right" width={150}>
 					Salary
 				</DataTable.Column>
 
-				<DataTable.Column field="status" align="center" width={150}>
+				<DataTable.Column field="status" align="center" width={50}>
 					Status
 				</DataTable.Column>
 			</DataTable>
