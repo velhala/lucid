@@ -516,6 +516,7 @@ export default createClass({
 
 		return (
 			<DataTable
+				isFixedHeader
 				data={_.map(
 					data,
 					(row, index) =>
@@ -531,7 +532,7 @@ export default createClass({
 			>
 				<DataTable.Column
 					field="id"
-					width="40px"
+					width="5%"
 					align="left"
 					hasBorderLeft
 					isSortable
@@ -543,7 +544,7 @@ export default createClass({
 
 				<DataTable.Column
 					field="first_name"
-					width="100px"
+					width="10%"
 					hasBorderLeft
 					hasBorderRight
 					isResizable
@@ -557,7 +558,7 @@ export default createClass({
 				<DataTable.Column
 					field="last_name"
 					align="left"
-					width="100px"
+					width="10%"
 					hasBorderRight
 					isResizable
 					isSortable
@@ -570,6 +571,7 @@ export default createClass({
 				<DataTable.Column
 					field="email"
 					align="left"
+					width="35%"
 					isSortable
 					isSorted={currentlySortedField === 'email'}
 					sortDirection={currentlySortedFieldDirection}
@@ -580,7 +582,7 @@ export default createClass({
 				<DataTable.Column
 					field="occupation"
 					align="left"
-					width={100}
+					width="20%"
 					hasBorderLeft
 					isSortable
 					isSorted={currentlySortedField === 'occupation'}
@@ -592,7 +594,7 @@ export default createClass({
 				<DataTable.Column
 					field="salary"
 					align="right"
-					width={100}
+					width="10%"
 					hasBorderLeft
 					isSortable
 					isSorted={currentlySortedField === 'salary'}
@@ -604,7 +606,7 @@ export default createClass({
 				<DataTable.Column
 					field="status"
 					align="center"
-					width={100}
+					width="10%"
 					hasBorderLeft
 				>
 					Status

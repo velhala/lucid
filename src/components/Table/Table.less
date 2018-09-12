@@ -5,6 +5,39 @@
 @Table-cell-padding-compressed: 2.5px 9.4px;
 
 
+.main-container {
+	position: absolute;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	.fixed-container {
+		width: 100%;
+		.lucid-Table-Td,
+		.lucid-Table-Th 
+		.lucid-Table-Th-inner-content 
+		.lucid-Table-Th-inner{
+			white-space: pre-wrap;
+			word-break: break-all;
+		}
+	}
+	.content-wrapper {
+		display: flex;
+		flex: 1;
+		min-height: 0px; ///* IMPORTANT: you need this for non-chrome browsers */
+		.overflow-container {
+			flex: 1;
+			overflow-y: auto;
+			.lucid-Table-Td,
+			.lucid-Table-Th 
+			.lucid-Table-Th-inner-content 
+			.lucid-Table-Th-inner{
+				white-space: pre-wrap;
+				word-break: break-all;
+				}
+			}
+		}		
+}
 
 .lucid-Table {
 	font: 500 @font;
@@ -36,27 +69,13 @@
 	.lucid-Table-Th {
 		padding: 0;
 	}
-	thead.fixedHeader tr {
-		position: relative;
-		display: block
-	}
-	
-	tbody.scrollContent {
-		display: block;
-		overflow: auto;
-		width: 99%;
 
-		.lucid-Table-Td{
-			white-space: pre-wrap;
-			word-break: break-all;
-		}
-	}
 	// `Table`.`hasWordWrap` prop
 	.lucid-Table-Td,
 	.lucid-Table-Th {
 		white-space: nowrap;
 	}
-
+	
 	&-has-word-wrap {
 		.lucid-Table-Td,
 		.lucid-Table-Th {
@@ -74,18 +93,18 @@
 		}
 		& > .lucid-Table-Tr > .lucid-Table-Th {
 			&.lucid-Table-is-sortable {
-					&:hover {
-						background-color: @color-table-header-sorted-light;
-					}
+				&:hover {
+					background-color: @color-table-header-sorted-light;
+				}
 			}
 
 			& > .lucid-Table-Th-inner {
-					// `Th`.`isSorted` prop
-					.lucid-Table-Th-inner-caret {
-						.lucid-Table-sort-icon {
-							fill: @color-textColor;
-						}
+				// `Th`.`isSorted` prop
+				.lucid-Table-Th-inner-caret {
+					.lucid-Table-sort-icon {
+						fill: @color-textColor;
 					}
+				}
 			}
 		}
 	}

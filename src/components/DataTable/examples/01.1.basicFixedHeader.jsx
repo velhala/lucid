@@ -204,7 +204,7 @@ const data = [
 		email: 'aw@example.com',
 		occupation: 'Player',
 		salary: '$250000000.07',
-		status: <SuccessIcon />,
+		status: <EditIcon />,
 	},
 	{
 		id: 23,
@@ -222,7 +222,7 @@ const data = [
 		email: 'adele@example.com',
 		occupation: 'artist',
 		salary: '$100.07',
-		status: <SuccessIcon />,
+		status: <DeleteIcon />,
 	},
 	{
 		id: 1,
@@ -275,7 +275,7 @@ const data = [
 		email: 'cdarwin@example.com',
 		occupation: 'Biologist',
 		salary: '$100.06',
-		status: <SuccessIcon />,
+		status: <FileIcon />,
 	},
 	{
 		id: 7,
@@ -444,35 +444,38 @@ const data = [
 export default createClass({
 	render() {
 		return (
-			<DataTable isFixedHeader height={400} data={data}>
-				<DataTable.Column width={30} field="id" align="left">
-					ID
-				</DataTable.Column>
+			<div>
+				<div> Some Header</div>
+				<DataTable isFixedHeader data={data}>
+					<DataTable.Column width={30} field="id" align="left">
+						ID
+					</DataTable.Column>
 
-				<DataTable.Column field="first_name" align="left" width={150}>
-					First
-				</DataTable.Column>
+					<DataTable.Column field="first_name" align="left" width={100}>
+						First
+					</DataTable.Column>
 
-				<DataTable.Column field="last_name" align="left" width={150}>
-					Last
-				</DataTable.Column>
+					<DataTable.Column field="last_name" align="left" width={150}>
+						Last
+					</DataTable.Column>
 
-				<DataTable.Column field="email" align="left" width={550}>
-					E-Mail
-				</DataTable.Column>
+					<DataTable.Column field="email" align="left" width={500}>
+						E-Mail
+					</DataTable.Column>
 
-				<DataTable.Column field="occupation" align="left" width={160}>
-					Occupation
-				</DataTable.Column>
+					<DataTable.Column field="occupation" align="left" width={160}>
+						Occupation
+					</DataTable.Column>
 
-				<DataTable.Column field="salary" align="right" width={150}>
-					Salary
-				</DataTable.Column>
+					<DataTable.Column field="salary" align="right" width={150}>
+						Salary
+					</DataTable.Column>
 
-				<DataTable.Column field="status" align="center" width={50}>
-					Status
-				</DataTable.Column>
-			</DataTable>
+					<DataTable.Column field="status" align="center" width={150}>
+						Status
+					</DataTable.Column>
+				</DataTable>
+			</div>
 		);
 	},
 });
