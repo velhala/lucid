@@ -12,6 +12,7 @@
 	flex-direction: column;
 	width: 100%;
 	.fixed-container {
+		table-layout: fixed;
 		width: 100%;
 		.lucid-Table-Td,
 		.lucid-Table-Th 
@@ -26,6 +27,7 @@
 		flex: 1;
 		min-height: 0px; ///* IMPORTANT: you need this for non-chrome browsers */
 		.overflow-container {
+			table-layout: fixed;
 			flex: 1;
 			overflow-y: auto;
 			.lucid-Table-Td,
@@ -40,6 +42,7 @@
 }
 
 .lucid-Table {
+	width: 100%;
 	font: 500 @font;
 	color: @color-textColor;
 	background-color: @color-white;
